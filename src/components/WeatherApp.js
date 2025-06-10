@@ -2,6 +2,7 @@
 import { useCityTime, useLocalTime } from "../hooks/useCityTime";
 import { useEffect, useState } from "react";
 import WeatherCard from "./WeatherCard";
+
 function WeatherApp() {
   const { hours, minutes, seconds } = useCityTime();
 
