@@ -2,7 +2,8 @@ import { useContext } from "react";
 import WeatherContext from "../WeatherContext";
 
 function WeatherCard() {
-  const { data, loading, error, icon } = useContext(WeatherContext);
+  const { data, loading, error, icon, forecastData } =
+    useContext(WeatherContext);
 
   if (loading)
     return (
@@ -53,6 +54,18 @@ function WeatherCard() {
           </div>
           <div className="col-12 col-md-4 text-center">
             <h3> Min Temperature</h3> <h4> {data.list[0].main.temp_min} °C</h4>
+          </div>
+        </div>
+
+        <div className="row d-flex pt-5">
+          <div className="col-12 col-md-4 text-center">
+            <h3> Humidity</h3> <h4> {data.list[0].main.humidity}%</h4>
+          </div>
+          <div className="col-12 col-md-4 text-center">
+            <h3>Wind </h3> <h4> {data.list[0].wind.speed} km/h</h4>
+          </div>
+          <div className="col-12 col-md-4 text-center">
+            <h3> Visibility</h3> <h4> {data.list[0].visibility / 1000} km </h4>
           </div>
         </div>
       </div>
